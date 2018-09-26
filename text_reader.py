@@ -1,6 +1,10 @@
 #LECTOR DE ARCHIVOS DE TEXTO
-from VALID import ns
 import win32com.client as wc
+
+def ns(op):
+    while op!="n" and op!="s":
+        op=input("Introduzca solo \'n\' o \'s\' según su opción: ")
+    return op
 
 speak=wc.Dispatch("Sapi.SpVoice")
 
