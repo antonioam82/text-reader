@@ -29,7 +29,8 @@ while True:
         if linea[-1]==('\n'):
             linea=linea[:-1]
         speak.Speak(linea)
-
+        
+    print("LECTURA FINALIZADA.")
     contin=conti()
     if contin=="n":
         break
