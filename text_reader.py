@@ -6,11 +6,11 @@ def ns(op):
         op=input("Introduzca solo \'n\' o \'s\' según su opción: ")
     return op
 
-speak=wc.Dispatch("Sapi.SpVoice")
-
 def conti():
     pre=ns(input("¿Desea continuar?: "))
     return pre
+
+speak=wc.Dispatch("Sapi.SpVoice")
 
 while True:
     texto=(input("Introduce el nombre del fichero a leer: ")+".txt")
