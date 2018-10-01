@@ -1,14 +1,13 @@
 #LECTOR DE ARCHIVOS DE TEXTO
 import win32com.client as wc
 
-def ns(op):
-    while op!="n" and op!="s":
-        op=input("Introduzca solo \'n\' o \'s\' según su opción: ")
-    return op
 
 def conti():
-    pre=ns(input("¿Desea continuar?: "))
+    pre=input("¿Desea continuar?: ")
+    while pre!="n" and pre!="s":
+        pre=input("Introduzca solo \'n\' o \'s\' según su opción: ")
     return pre
+    
 
 speak=wc.Dispatch("Sapi.SpVoice")
 
@@ -24,13 +23,13 @@ while True:
         else:
             continue
 
-    print("REPRODUCIENDO TEXTO")
+    print("REPRODUCIENDO TEXTO",texto)
     for linea in fichero:
         if linea[-1]==('\n'):
             linea=linea[:-1]
         speak.Speak(linea)
-        
-    print("LECTURA FINALIZADA.")
+
+    print("LECTURA FINALIZADA")
     contin=conti()
     if contin=="n":
         break
