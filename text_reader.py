@@ -16,7 +16,10 @@ while True:
     try:
         fichero=open(texto,"r")
     except:
-        print("No se encontró el archivo",texto)
+        if texto==".txt":
+            print("No se especificó el archivo deseado.")
+        else:
+            print("No se encontró el archivo",texto)
         contin=conti()
         if contin=="n":
             break
