@@ -1,7 +1,14 @@
 #LECTOR DE ARCHIVOS DE TEXTO
 import win32com.client as wc
+import os
 
-
+def dire():
+    while True:
+        direc=input("Introduce ubicación: ")
+        if os.path.isdir(direc):
+            os.chdir(direc)
+            break
+    
 def conti():
     pre=input("¿Desea continuar?: ")
     while pre!="n" and pre!="s":
@@ -12,6 +19,7 @@ def conti():
 speak=wc.Dispatch("Sapi.SpVoice")
 
 while True:
+    dire()
     texto=(input("Introduce el nombre del fichero a leer: ")+".txt")
     try:
         fichero=open(texto,"r")
